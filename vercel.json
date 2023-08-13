@@ -1,0 +1,8 @@
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "build": {
+    "env": {
+      "PRISMA_GENERATE": "yarn prisma generate"
+    }
+  }
+}
