@@ -30,7 +30,7 @@ const LoginModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    signIn(`credentials`, { ...data })
+    signIn(`credentials`, { ...data, redirect: false })
       .then((callback) => {
         console.log(0);
         console.log(callback);
@@ -43,6 +43,7 @@ const LoginModal = () => {
           }
         }
       })
+      .catch((error) => console.log(error))
       .finally(() => setIsLoading(false));
   };
   const bodyContent = (
