@@ -2,7 +2,7 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "build": {
     "env": {
-      "PRISMA_GENERATE": "npm prisma generate"
+      "PRISMA_GENERATE": "npx prisma generate"
     }
   }
 }
