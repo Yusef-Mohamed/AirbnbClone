@@ -1,5 +1,4 @@
 "use client";
-import getCurrentUser from "@/app/actions/getCurrentUser";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
