@@ -32,6 +32,8 @@ const LoginModal = () => {
     setIsLoading(true);
     signIn(`credentials`, { ...data, redirect: false })
       .then((callback) => {
+        console.log(0);
+        console.log(callback);
         if (callback?.error) {
           toast.error(callback.error);
         } else {
