@@ -27,24 +27,25 @@ const LoginModal = () => {
       password: "",
     },
   });
-
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    signIn(`credentials`, { ...data, redirect: false })
-      .then((callback) => {
-        console.log(0);
-        console.log(callback);
-        if (callback?.error) {
-          toast.error(callback.error);
-        } else {
-          if (callback?.ok) {
-            toast.success("Logged in");
-            loginModal.onClose();
-          }
-        }
-      })
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false));
+
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+    }).then((callback) => {
+      setIsLoading(false);
+
+      if (callback?.ok) {
+        toast.success("Logged in");
+        // router.refresh();
+        loginModal.onClose();
+      }
+
+      if (callback?.error) {
+        toast.error(callback.error);
+      }
+    });
   };
   const bodyContent = (
     <div className="flex flex-col gap-4">
